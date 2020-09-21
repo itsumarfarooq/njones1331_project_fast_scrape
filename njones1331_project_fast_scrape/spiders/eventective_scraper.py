@@ -31,7 +31,7 @@ class EventectiveScraperSpider(scrapy.Spider):
 
     def scrape_event_data(self, response, state_name, city_name):
         event = {}
-        with open('state_city_url.csv','a',encoding='utf-8') as f:
+        with open('state_city_url.csv','a',encoding='utf-8',newline='') as f:
             writer = csv.writer(f)
             writer.writerow([state_name, city_name, response.url])
         event[response.url] = event_info = {}
